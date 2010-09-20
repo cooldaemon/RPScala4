@@ -1,0 +1,25 @@
+git commit -m 'first commit'
+git remote add origin git@github.com:cooldaemon/RPScala4.git
+git push origin master
+
+
+
+
+Version Control
+
+sbt creates and uses several directories that you will normally want to exclude from version control:
+
+  target/
+  lib_managed/
+  project/boot/
+  project/build/target/
+  project/plugins/target/
+  project/plugins/lib_managed/
+  project/plugins/src_managed/
+
+A .gitignore for an sbt project should contain these entries:
+
+  target/
+  lib_managed/
+  src_managed/
+  project/boot/

@@ -1,0 +1,3 @@
+play install scala
+play install akka-head
+play new MySampleApp --with scala,akka-head
