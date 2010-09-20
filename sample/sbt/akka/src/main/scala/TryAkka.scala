@@ -6,6 +6,8 @@ object TryAkka {
  
     MyActor.run
     WorkstealingActor.run
+    AtomicActor.run
+    FiniteStateMachine.run
 
     println("TryAkka Stop!")
   }
