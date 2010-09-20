@@ -3,13 +3,13 @@ cd akka
 sbt
 
 cd project
-mkdir build  plugins
+mkdir build plugins
 vi plugins/Plugins.scala
 vi build/AkkaSample.scala
 cd ..
 
 cd src/main/resources
-curl http://github.com/jboner/akka/raw/master/config/akka.conf > akka.conf
+curl http://github.com/jboner/akka/raw/v0.10/config/akka.conf > akka.conf
 curl http://github.com/jboner/akka/raw/v0.10/config/akka-reference.conf > akka-reference.conf
 
 sbt
