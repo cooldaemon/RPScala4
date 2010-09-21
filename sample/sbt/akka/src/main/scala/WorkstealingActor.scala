@@ -6,9 +6,9 @@ class WorkstealingActor(name: String) extends Actor {
   def receive = {
     case "test" =>
       Thread.sleep(500)
-      println("received test:" + name)
-    case _ =>
-      println("received unknown message")
+      log.info("received test: %s", name)
+    case unknown =>
+      log.warning("unknown message [%s], ignoring", unknown)
   }
 }
 

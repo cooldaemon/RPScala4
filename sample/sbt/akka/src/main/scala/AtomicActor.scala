@@ -1,4 +1,3 @@
-import scala.util.logging.ConsoleLogger
 import se.scalablesolutions.akka.actor.Actor
 
 case class Info(i: Map[String, Int])
@@ -6,14 +5,14 @@ case object GetInfo
 case class SetInfo(n: String, v: Int)
 case class Update(n: String, f: Option[Int] => Int)
 
-class AtomicActor extends Actor with ConsoleLogger {
+class AtomicActor extends Actor {
   private var info: Map[String, Int] = Map()
 
   def receive = {
     case GetInfo       => self.reply(Info(info))
     case SetInfo(n, v) => info += n -> v
     case Update(n, f)  => info += n -> f(info.get(n))
-    case other         => log("received unknown message: %s" format other.toString)
+    case unknown       => log.warning("unknown message [%s], ignoring", unknown)
   }
 }
 

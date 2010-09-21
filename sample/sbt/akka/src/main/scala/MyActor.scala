@@ -2,8 +2,8 @@ import se.scalablesolutions.akka.actor.Actor
 
 class MyActor extends Actor {
   def receive = {
-    case "test" => println("received test")
-    case _ =>      println("received unknown message")
+    case "test"  => log.info("received test")
+    case unknown => log.warning("unknown message [%s], ignoring", unknown)
   }
 }
 
