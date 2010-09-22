@@ -30,19 +30,19 @@ class FiniteStateMachine extends Actor {
 
 object FiniteStateMachine {
   def run {
-    val FSMActor = Actor.actorOf[FiniteStateMachine]
-    FSMActor.start
+    val fsmActor = Actor.actorOf[FiniteStateMachine]
+    fsmActor.start
 
-    println(FSMActor !! (GetState, 1000))
-    FSMActor ! ToState2
-    println(FSMActor !! (GetState, 1000))
-    FSMActor ! ToState1
-    println(FSMActor !! (GetState, 1000))
-    FSMActor ! ToState1 // warning
-    println(FSMActor !! (GetState, 1000))
-    FSMActor ! ToState2
-    println(FSMActor !! (GetState, 1000))
+    println(fsmActor !! (GetState, 1000))
+    fsmActor ! ToState2
+    println(fsmActor !! (GetState, 1000))
+    fsmActor ! ToState1
+    println(fsmActor !! (GetState, 1000))
+    fsmActor ! ToState1 // warning
+    println(fsmActor !! (GetState, 1000))
+    fsmActor ! ToState2
+    println(fsmActor !! (GetState, 1000))
 
-    FSMActor.stop
+    fsmActor.stop
   }
 }
